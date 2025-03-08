@@ -1,0 +1,43 @@
+{
+    "welcome": {
+        "title": "Trephy Portfolio",
+        "hero": {
+            "greeting": "Hi, I'm Trephy",
+            "description": "I'm a Web Developer & Cybersecurity Enthusiast creating engaging digital experiences.",
+            "explore_work": "Explore My Work",
+            "read_blog": "Read My Blog",
+
+            "button": {
+                "work": "Explore My Work",
+                "blog": "Read My Blog",
+                "contact": "Contact Me"
+            }
+        }
+    },
+    "layout": {
+        "footer": {
+            "copyright": "&copy; 2024 Trephy | Web Developer & Cybersecurity Enthusiast"
+        },
+        "header": {
+            "nav": {
+                "home": "Home",
+                "work": "Work",
+                "blog": "Blog",
+                "contact": "Contact"
+            },
+
+            "brand": "Trephy"
+        }
+    },
+    "work": {
+        "title": "My Work",
+        "hero": {
+            "heading": "Showcasing Trephy's Projects",
+            "description": "Here is a curated selection of my favorite projects and achievements.",
+            "button": {
+                "portfolio": "View Projects",
+                "contact": "Contact Me"
+            }
+        }
+    }
+}

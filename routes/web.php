@@ -13,6 +13,17 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+Route::get('/work', function () {
+    return Inertia::render('WorkPage');
+
+});
+
+Route::get('/blog', function () {
+    return Inertia::render('Blog');
+});
+Route::get('/contact', function () {
+    return Inertia::render('Contact');
+});
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -24,4 +35,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

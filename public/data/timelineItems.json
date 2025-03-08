@@ -1,0 +1,112 @@
+[
+    {
+        "title": "Web Development",
+        "skillLevel": "EXPERT",
+        "tags": ["Backend", "Frontend"],
+        "description": "The first thing I learnt was developing for the web. I can handle both front and backend, with experience using a variety of tools and languages.",
+        "technologies": [
+            {
+                "name": "Laravel",
+                "image": "laravel",
+                "link": "https://laravel.com"
+            },
+            {
+                "name": "NestJS",
+                "image": "nestjs",
+                "link": "https://nestjs.com"
+            },
+            {
+                "name": "Vue.js",
+                "image": "vue",
+                "link": "https://vuejs.org"
+            },
+            {
+                "name": "React",
+                "image": "react",
+                "link": "https://reactjs.org"
+            }
+        ]
+    },
+    {
+        "title": "Cybersecurity",
+        "skillLevel": "Intermediate",
+        "tags": ["Prevention", "Pentesting"],
+        "description": "During my time as a web developer, I learned the basics of Cybersecurity to build secure apps. I also practice pentesting on hackthebox and tryhackme.",
+        "technologies": [
+            {
+                "name": "Metasploit",
+                "image": "metasploit",
+                "link": "https://metasploit.com"
+            },
+            {
+                "name": "Kali",
+                "image": "kali",
+                "link": "https://kali.org"
+            }
+        ]
+    },
+    {
+        "title": "Machine Learning / AI",
+        "skillLevel": "Intermediate",
+        "tags": ["Estimations", "Predictions"],
+        "description": "I have experience working with machine learning and AI in various hackathons, covering both supervised and unsupervised learning.",
+        "technologies": [
+            {
+                "name": "Python",
+                "image": "python",
+                "link": "https://python.org"
+            },
+            {
+                "name": "TensorFlow",
+                "image": "tensorflow",
+                "link": "https://tensorflow.org"
+            },
+            {
+                "name": "Pytorch",
+                "image": "pytorch",
+                "link": "https://pytorch.org"
+            }
+        ]
+    },
+    {
+        "title": "App Development",
+        "skillLevel": "EXPERT",
+        "tags": ["Native", "Hybrid"],
+        "description": "I have worked on native and hybrid apps for both Android and iOS, using multiple tools, languages, and frameworks.",
+        "technologies": [
+            {
+                "name": "React Native",
+                "image": "reactnative",
+                "link": "https://reactnative.dev"
+            },
+            {
+                "name": "Flutter",
+                "image": "flutter",
+                "link": "https://flutter.dev"
+            },
+            {
+                "name": "Swift",
+                "image": "swift",
+                "link": "https://swift.org"
+            }
+        ]
+    },
+    {
+        "title": "Containerizing / DevOps",
+        "skillLevel": "Advanced",
+        "tags": ["Reverse Proxy", "Containers"],
+        "description": "From simple reverse proxies to Kubernetes clusters, I have experience containerizing and deploying apps so users can access them on the web.",
+        "technologies": [
+            {
+                "name": "Docker",
+                "image": "docker",
+                "link": "https://docker.com"
+            },
+            {
+                "name": "Kubernetes",
+                "image": "kubernetes",
+                "link": "https://kubernetes.io"
+            }
+        ]
+    }
+]

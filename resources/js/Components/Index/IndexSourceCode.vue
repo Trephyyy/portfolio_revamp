@@ -1,4 +1,5 @@
 <script setup>
+import { Link } from "@inertiajs/vue3";
 import MatrixEffect from "./MatrixEffect.vue";
 </script>
 
@@ -39,11 +40,13 @@ import MatrixEffect from "./MatrixEffect.vue";
                 <span class="text-muted-700">red pill</span> - you stay in
                 wonderland, and we show you how deep the rabbit hole goes.
             </p>
-            <button
+
+            <Link
+                href="https://github.com/Trephyyy/portfolio_revamp"
                 class="py-3 mt-2 text-lg font-bold px-7 button text-muted-800 bg-accent-500"
             >
                 Show me
-            </button>
+            </Link>
         </div>
         <MatrixEffect />
     </div>

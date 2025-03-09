@@ -14,7 +14,7 @@ import IndexWork from "@/Components/Index/IndexWork.vue";
 </script>
 
 <template>
-    <Head title="Trephy Portfolio" />
+    <Head title="Home" />
     <AppLayout>
         <div
             class="bg-primary-500 text-secondary dark:bg-primary-600 dark:text-secondary"

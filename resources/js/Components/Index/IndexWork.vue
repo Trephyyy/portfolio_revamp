@@ -235,7 +235,7 @@
                                         })
                                     "
                                     :class="[
-                                        'pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover transition-[transform,opacity,filter] duration-700',
+                                        'pointer-events-none absolute brightness-50 sm:brightness-100 inset-0 -z-10 h-full w-full object-cover transition-[transform,opacity,filter] duration-700',
                                         !filteredProjects.includes(project)
                                             ? 'opacity-20 grayscale'
                                             : 'group-hover:scale-105 group-focus-visible:scale-105',

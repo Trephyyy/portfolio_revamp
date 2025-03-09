@@ -15,7 +15,7 @@ const { t } = useI18n();
             class="absolute inset-0 flex items-end justify-center overflow-hidden"
         >
             <h1
-                class="text-[32rem] z-0 -mb-32 font-black text-secondary-200 opacity-30 leading-none"
+                class="sm:text-[32rem] text-[12em] z-0 -mb-8 sm:-mb-32 font-black text-secondary-200 opacity-30 leading-none"
             >
                 TREPHY
             </h1>

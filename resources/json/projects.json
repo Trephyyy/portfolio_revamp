@@ -1,0 +1,74 @@
+[
+    {
+        "_id": "1",
+        "name": "Flashlearn",
+        "slug": {
+            "current": "flashlearn",
+            "outside": "https://flashlearn.mooo.com"
+        },
+        "date": "2025-01-21",
+        "tags": ["Website", "Vue.js", "Laravel"],
+        "poster": {
+            "alt": "Flashlearn Poster",
+            "asset": {
+                "url": "/projects/flashlearn_large.png",
+                "metadata": {
+                    "dimensions": { "width": 350, "height": 450 },
+                    "palette": {
+                        "dominant": {
+                            "background": "#000000",
+                            "foreground": "#ffffff"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_id": "2",
+        "name": "PCRevive",
+        "slug": { "current": "pcrevive", "outside": "https://pcrevivebg.com" },
+        "date": "2024-12-18",
+        "tags": ["Website", "Vue"],
+        "poster": {
+            "alt": "PCRevive Poster",
+            "asset": {
+                "url": "/projects/Pcrevive1.png",
+                "metadata": {
+                    "dimensions": { "width": 300, "height": 450 },
+                    "palette": {
+                        "dominant": {
+                            "background": "#111111",
+                            "foreground": "#ffffff"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_id": "3",
+        "name": "Greenmore",
+        "slug": {
+            "current": "greenmore",
+            "outside": "https://github.com/Trephyyy/Greenmore"
+        },
+        "date": "2024-02-18",
+        "tags": ["Website", "React"],
+        "poster": {
+            "alt": "Greenmore Poster",
+            "asset": {
+                "url": "/projects/greenmore.png",
+                "metadata": {
+                    "dimensions": { "width": 300, "height": 450 },
+                    "palette": {
+                        "dominant": {
+                            "background": "#222222",
+                            "foreground": "#ffffff"
+                        }
+                    }
+                }
+            }
+        }
+    }
+]

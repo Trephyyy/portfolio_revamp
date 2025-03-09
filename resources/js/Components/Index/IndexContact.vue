@@ -1,12 +1,11 @@
 <template>
-
-    <div
-        class="relative z-20 flex flex-col items-center justify-center min-h-screen md:flex-row bg-gradient-to-r from-primary-500 to-primary-300"
-    >
- <div class="absolute w-full h-full ">
+    <section
+    id="contact"
+    class="relative z-20 flex flex-col items-center justify-center min-h-screen md:flex-row bg-gradient-to-r from-primary-500 to-primary-300">
+        <div class="absolute w-full h-full">
             <GridBackground />
- </div>
-    <div class="z-10 w-full p-6 mx-10 md:w-1/2">
+        </div>
+        <div class="z-10 w-full p-6 mx-10 md:w-1/2">
             <h1 class="mb-4 text-4xl font-bold">Contact Me</h1>
             <p class="mb-6 text-lg">
                 Have any questions or want to work together? Send me a message
@@ -14,30 +13,16 @@
                 You can also find me on social media.
             </p>
             <div class="flex space-x-4">
-                <a href="https://twitter.com" target="_blank" class="text-2xl">
-                    <Icon icon="mdi:twitter" />
+                <a v-for="social in socials" :href="social.link" >
+                    <Icon :icon="social.icon" class="text-2xl" />
                 </a>
-                <a href="https://facebook.com" target="_blank" class="text-2xl">
-                    <Icon icon="mdi:facebook" />
-                </a>
-                <a href="https://linkedin.com" target="_blank" class="text-2xl">
-                    <Icon icon="mdi:linkedin" />
-                </a>
-                <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    class="text-2xl"
-                >
-                    <Icon icon="mdi:instagram" />
-                </a>
+              
             </div>
         </div>
         <div class="z-10 w-full p-6 md:w-1/2">
             <form @submit.prevent="submitForm" class="space-y-4">
                 <div>
-                    <label for="name" class="block text-sm font-medium text-muted-200"
-                        >Name</label
-                    >
+                    <label for="name" class="block text-sm font-medium text-muted-200">Name</label>
                     <input
                         type="text"
                         id="name"
@@ -47,9 +32,7 @@
                     />
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium text-muted-200"
-                        >Email</label
-                    >
+                    <label for="email" class="block text-sm font-medium text-muted-200">Email</label>
                     <input
                         type="email"
                         id="email"
@@ -59,9 +42,7 @@
                     />
                 </div>
                 <div>
-                    <label for="message" class="block text-sm font-medium text-muted-200"
-                        >Message</label
-                    >
+                    <label for="message" class="block text-sm font-medium text-muted-200">Message</label>
                     <textarea
                         id="message"
                         v-model="form.message"
@@ -78,7 +59,7 @@
                 </button>
             </form>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup>
@@ -86,6 +67,8 @@ import { ref } from "vue";
 import { Icon } from "@iconify/vue/dist/iconify.js";
 import anime from "animejs";
 import GridBackground from "./GridBackground.vue";
+import axios from "axios";
+import socials from "../../../json/socials.json";
 
 const form = ref({
     name: "",
@@ -94,8 +77,22 @@ const form = ref({
 });
 
 const submitForm = () => {
-    // Handle form submission
-    console.log("Form submitted:", form.value);
+    axios.post("/contact", {
+        name: form.value.name,
+        email: form.value.email,
+        message: form.value.message,
+    })
+    .then(response => {
+        console.log("Message sent successfully:", response.data);
+        form.value.name = "";
+        form.value.email = "";
+        form.value.message = "";
+    })
+    .catch(error => {
+        console.error("Error sending message:", error);
+        alert("There was an error sending your message. Please try again.");
+    });
+
     anime({
         targets: form.value,
         opacity: [0, 1],

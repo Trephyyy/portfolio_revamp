@@ -1,5 +1,7 @@
 <script setup>
+import { Icon } from "@iconify/vue";
 import { Link } from "@inertiajs/vue3";
+import socials from "../../../json/socials.json";
 
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
@@ -52,28 +54,13 @@ const { t } = useI18n();
                     <h1 class="text-xl font-semibold">Socials</h1>
                     <div class="flex mt-4 space-x-4">
                         <a
-                            href="https://twitter.com/trephydev"
+                            v-for="social in socials"
+                            :href="social.link"
                             target="_blank"
-                            class="flex items-center space-x-2"
+                            class="z-10 flex items-center space-x-2"
                         >
-                            <i class="fab fa-twitter"></i>
-                            <span>Twitter</span>
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/trephydev/"
-                            target="_blank"
-                            class="flex items-center space-x-2"
-                        >
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a
-                            href="https://instagram.com/trephydev"
-                            target="_blank"
-                            class="flex items-center space-x-2"
-                        >
-                            <i class="fab fa-instagram"></i>
-                            <span>Instagram</span>
+                            <Icon :icon="social.icon" class="text-2xl" />
+                            <span>{{ social.name }}</span>
                         </a>
                     </div>
                 </div>

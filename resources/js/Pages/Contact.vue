@@ -1,10 +1,10 @@
 <template>
     <div
-        class="flex flex-col md:flex-row min-h-screen items-center justify-center p-6 bg-gradient-to-r from-primary-500 to-primary-300"
+        class="flex flex-col items-center justify-center min-h-screen p-6 md:flex-row bg-gradient-to-r from-primary-500 to-primary-300"
     >
-        <div class="w-full md:w-1/2 p-6">
-            <h1 class="text-4xl font-bold mb-4">Contact Us</h1>
-            <p class="text-lg mb-6">
+        <div class="w-full p-6 md:w-1/2">
+            <h1 class="mb-4 text-4xl font-bold">Contact Us</h1>
+            <p class="mb-6 text-lg">
                 We'd love to hear from you! Please fill out the form below or
                 reach out to us on social media.
             </p>
@@ -27,7 +27,7 @@
                 </a>
             </div>
         </div>
-        <div class="w-full md:w-1/2 p-6">
+        <div class="w-full p-6 md:w-1/2">
             <form @submit.prevent="submitForm" class="space-y-4">
                 <div>
                     <label for="name" class="block text-sm font-medium"
@@ -37,7 +37,7 @@
                         type="text"
                         id="name"
                         v-model="form.name"
-                        class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        class="block w-full p-2 mt-1 border border-gray-300 rounded-md"
                         required
                     />
                 </div>
@@ -49,7 +49,7 @@
                         type="email"
                         id="email"
                         v-model="form.email"
-                        class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        class="block w-full p-2 mt-1 border border-gray-300 rounded-md"
                         required
                     />
                 </div>
@@ -60,14 +60,14 @@
                     <textarea
                         id="message"
                         v-model="form.message"
-                        class="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        class="block w-full p-2 mt-1 border border-gray-300 rounded-md"
                         rows="4"
                         required
                     ></textarea>
                 </div>
                 <button
                     type="submit"
-                    class="w-full py-2 px-4 bg-primary-500 text-white font-semibold rounded-md hover:bg-primary-600"
+                    class="w-full px-4 py-2 font-semibold text-white rounded-md bg-primary-500 hover:bg-primary-600"
                 >
                     Send Message
                 </button>
@@ -79,6 +79,7 @@
 <script setup>
 import { ref } from "vue";
 import anime from "animejs";
+import axios from "axios";
 
 const form = ref({
     name: "",
@@ -87,14 +88,23 @@ const form = ref({
 });
 
 const submitForm = () => {
-    // Handle form submission
-    console.log("Form submitted:", form.value);
-    anime({
-        targets: form.value,
-        opacity: [0, 1],
-        duration: 1000,
-        easing: "easeInOutQuad",
-    });
+    axios
+        .post("/contact", {
+            name: form.value.name,
+            email: form.value.email,
+            message: form.value.message,
+        })
+        .then((response) => {
+            console.log("Message sent successfully:", response.data);
+            // Optionally, you can reset the form here
+            form.value.name = "";
+            form.value.email = "";
+            form.value.message = "";
+        })
+        .catch((error) => {
+            console.error("Error sending message:", error);
+            // Optionally, you can show an error message to the user here
+        });
 };
 </script>
 

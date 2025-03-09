@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,8 @@ Route::get('/blog', function () {
 Route::get('/contact', function () {
     return Inertia::render('Contact');
 });
+
+Route::post('/contact', [ContactFormController::class, 'store'])->name('contact.store');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

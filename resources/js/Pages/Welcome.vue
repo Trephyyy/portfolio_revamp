@@ -3,20 +3,14 @@ import TimelineItem from "@/Components/TimelineItem.vue";
 import MobileTimelineItem from "@/Components/MobileTimelineItem.vue";
 import AppLayout from "@/Layouts/AppLayout.vue";
 import { Head, Link } from "@inertiajs/vue3";
-import { useI18n } from "vue-i18n";
 import AboutSection from "@/Components/Index/AboutSection.vue";
 import IndexTimeline from "@/Components/Index/IndexTimeline.vue";
 import IndexHero from "@/Components/Index/IndexHero.vue";
-import NewHero from "@/Components/Index/NewHero.vue";
-import IndexWorkCta from "@/Components/Index/IndexWorkCta.vue";
-import IndexCards from "@/Components/Index/IndexCards.vue";
-import MatrixEffect from "@/Components/Index/MatrixEffect.vue";
 import IndexSourceCode from "@/Components/Index/IndexSourceCode.vue";
 import GridBackground from "@/Components/Index/GridBackground.vue";
 import IndexContact from "@/Components/Index/IndexContact.vue";
-import { useScroll } from "@vueuse/core";
-
-const { t } = useI18n();
+import projects from "../../json/projects.json";
+import IndexWork from "@/Components/Index/IndexWork.vue";
 </script>
 
 <template>
@@ -27,6 +21,7 @@ const { t } = useI18n();
         >
             <div
                 class="relative flex min-h-screen flex-col selection:bg-[#FF2D20] selection:text-white"
+                style="scroll-behavior: smooth"
             >
                 <div class="relative w-full h-full overflow-hidden">
                     <main
@@ -38,12 +33,11 @@ const { t } = useI18n();
                             <IndexHero />
                             <GridBackground />
                         </div>
-
                         <div class="z-20">
                             <div class="relative h-screen"></div>
                             <AboutSection />
                             <IndexTimeline />
-                            <IndexWorkCta />
+                            <IndexWork :projects="projects" />
                             <IndexContact />
                             <div class="bg-[#060918] w-full h-full z-10">
                                 <IndexSourceCode />
@@ -52,7 +46,6 @@ const { t } = useI18n();
                     </main>
                 </div>
             </div>
-            {{ y }}
         </div>
     </AppLayout>
 </template>

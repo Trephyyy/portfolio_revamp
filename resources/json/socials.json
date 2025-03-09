@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Facebook",
+        "link": "https://www.facebook.com/yourprofile",
+        "icon": "mdi:facebook"
+    },
+    {
+        "name": "Twitter",
+        "link": "https://www.twitter.com/yourprofile",
+        "icon": "mdi:twitter"
+    },
+    {
+        "name": "LinkedIn",
+        "link": "https://www.linkedin.com/in/yourprofile",
+        "icon": "mdi:linkedin"
+    },
+    {
+        "name": "Instagram",
+        "link": "https://www.instagram.com/yourprofile",
+        "icon": "mdi:instagram"
+    }
+]

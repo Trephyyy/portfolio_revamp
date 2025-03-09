@@ -17,20 +17,32 @@ const { t } = useI18n();
         <div class="flex-none">
             <ul class="p-0 text-xl font-semibold menu menu-horizontal">
                 <li>
-                    <Link href="/">{{ t("layout.header.nav.home") }}</Link>
+                    <a href="#" class="scroll-smooth">{{
+                        t("layout.header.nav.home")
+                    }}</a>
                 </li>
                 <li>
-                    <Link href="/blog">{{ t("layout.header.nav.blog") }}</Link>
+                    <a href="#about" class="scroll-smooth">{{
+                        t("layout.header.nav.about")
+                    }}</a>
                 </li>
                 <li>
-                    <Link href="/work">{{ t("layout.header.nav.work") }}</Link>
+                    <a href="#work" class="scroll-smooth">{{
+                        t("layout.header.nav.work")
+                    }}</a>
                 </li>
                 <li>
-                    <Link href="/contact">{{
+                    <a href="#contact" class="scroll-smooth">{{
                         t("layout.header.nav.contact")
-                    }}</Link>
+                    }}</a>
                 </li>
             </ul>
         </div>
     </header>
 </template>
+
+<style scoped>
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+</style>

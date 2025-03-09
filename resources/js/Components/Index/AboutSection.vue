@@ -1,21 +1,20 @@
 <script setup></script>
 
 <template>
-    <div class="relative w-full sm:h-screen text-secondary dark:text-secondary">
+    <section
+        id="about"
+        class="relative w-full sm:h-screen text-secondary dark:text-secondary"
+    >
         <div
             class="w-full min-h-screen bg-gradient-to-r from-secondary-300 to-secondary-200"
         >
             <div
                 class="grid items-center justify-center w-full min-h-full grid-cols-1 md:grid-cols-2"
             >
-                <div class="">
-                    <img
-                        class="max-h-screen"
-                        src="http://place-hold.it/1080x1110"
-                        alt=""
-                    />
+                <div class="hidden sm:block">
+                    <img class="max-h-screen" src="/about/me.jpg" alt="" />
                 </div>
-                <div class="p-8 min-h-fit text-muted-700">
+                <div class="p-8 min-h-fit sm:-ml-[10%] text-muted-700">
                     <div
                         class="px-6 py-1.5 my-8 font-bold border-2 text-accent_2-800 rounded-2xl bg-accent_2-300 max-w-fit label border-accent_2-200"
                     >
@@ -39,6 +38,13 @@
                         that consistently exceed expectations.
                     </p>
                 </div>
+                <div class="block sm:hidden">
+                    <img
+                        class="max-h-[40vh] mb-12 mx-auto"
+                        src="/about/me.jpg"
+                        alt=""
+                    />
+                </div>
                 <!-- <div class="flex items-center justify-center">
                     <img
                         src="/path/to/your/image.jpg"
@@ -48,5 +54,5 @@
                 </div> -->
             </div>
         </div>
-    </div>
+    </section>
 </template>

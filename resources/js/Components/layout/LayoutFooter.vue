@@ -9,7 +9,7 @@ const { t } = useI18n();
 
 <template>
     <footer
-        class="relative z-50 flex flex-col items-center justify-center h-screen py-6 text-sm bg-muted-800 text-secondary dark:text-secondary-100"
+        class="relative z-40 flex flex-col items-center justify-center h-screen py-6 text-sm bg-muted-800 text-secondary dark:text-secondary-100"
     >
         <div
             class="absolute inset-0 flex items-end justify-center overflow-hidden"

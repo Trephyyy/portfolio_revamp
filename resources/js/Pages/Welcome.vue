@@ -20,7 +20,7 @@ import IndexWork from "@/Components/Index/IndexWork.vue";
             class="bg-primary-500 text-secondary dark:bg-primary-600 dark:text-secondary"
         >
             <div
-                class="relative flex min-h-screen flex-col selection:bg-[#FF2D20] selection:text-white"
+                class="relative flex min-h-screen flex-col selection:bg-[#FF2D20] selection:text-white animate-fade-in"
                 style="scroll-behavior: smooth"
             >
                 <div class="relative w-full h-full overflow-hidden">
@@ -49,3 +49,18 @@ import IndexWork from "@/Components/Index/IndexWork.vue";
         </div>
     </AppLayout>
 </template>
+
+<style scoped>
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 1s ease-in-out;
+}
+</style>

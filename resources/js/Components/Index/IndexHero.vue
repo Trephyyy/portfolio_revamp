@@ -4,7 +4,7 @@ import { useI18n } from "vue-i18n";
 import { ref, onMounted } from "vue";
 
 const { t } = useI18n();
-const verbs = ref(["design", "code", "deploy", "create", "build"]);
+const verbs = ref(["design", "code", "create", "build", "deploy"]);
 const currentVerb = ref("");
 let index = 0;
 let charIndex = 0;
@@ -35,11 +35,13 @@ onMounted(() => {
 
 <template>
     <div
-        class="z-30 flex items-center justify-center w-full min-h-screen mx-auto text-center bg-center bg-cover hero hero-content"
+        class="z-30 flex items-center justify-center w-full min-h-screen mx-auto text-center bg-center bg-cover hero hero-content animate-fade-in"
     >
-        <div class="bg-gray-900 bg-opacity-75 p-9 rounded-xl">
-            <h1 class="text-6xl font-bold text-white">Hello, I'm Trephy</h1>
-            <p class="py-6 text-2xl text-white">
+        <div class="bg-gray-900 bg-opacity-75 p-9 rounded-xl animate-slide-up">
+            <h1 class="text-6xl font-bold text-white animate-slide-in-left">
+                Hello, I'm Trephy
+            </h1>
+            <p class="py-6 text-xl text-white animate-slide-in-right">
                 A developer who loves to
                 <span class="text-accent_2-800">{{ currentVerb }}</span
                 ><span class="-ml-1 cursor">|</span>
@@ -74,5 +76,63 @@ onMounted(() => {
     to {
         visibility: hidden;
     }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-left {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 1s ease-in-out;
+}
+
+.animate-slide-up {
+    animation: slide-up 1s ease-in-out;
+}
+
+.animate-slide-in-left {
+    animation: slide-in-left 1s ease-in-out;
+}
+
+.animate-slide-in-right {
+    animation: slide-in-right 1s ease-in-out;
 }
 </style>

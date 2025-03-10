@@ -81,7 +81,7 @@
             </div>
 
             <!-- Carousel -->
-            <div class="relative py-8 overflow-x-hidden">
+            <div class="relative mt-[10%] md:mt-[5%] py-8 overflow-x-hidden">
                 <!-- Controls -->
                 <div
                     aria-label="Carousel Controls"

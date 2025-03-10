@@ -33,7 +33,7 @@ import MatrixEffect from "./MatrixEffect.vue";
             <h2 class="mt-2 text-5xl font-semibold text-muted-900">
                 Behind the simulation
             </h2>
-            <p class="text-lg text-muted-400">
+            <p class="max-w-sm text-lg sm:max-w-fit text-muted-400">
                 You take the <span class="text-muted-700">blue pill</span> - you
                 keep scrolling, you leave this website and believe whatever you
                 want to believe. You take the
@@ -41,12 +41,12 @@ import MatrixEffect from "./MatrixEffect.vue";
                 wonderland, and we show you how deep the rabbit hole goes.
             </p>
 
-            <Link
+            <a
                 href="https://github.com/Trephyyy/portfolio_revamp"
                 class="py-3 mt-2 text-lg font-bold px-7 button text-muted-800 bg-accent-500"
             >
                 Show me
-            </Link>
+            </a>
         </div>
         <MatrixEffect />
     </div>

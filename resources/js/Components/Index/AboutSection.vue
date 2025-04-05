@@ -16,9 +16,9 @@ const { t } = useI18n();
                 class="grid items-center justify-center w-full min-h-full grid-cols-1 md:grid-cols-2"
             >
                 <div class="hidden sm:block">
-                    <img class="max-h-screen" src="/about/me.jpg" alt="" />
+                    <img class="" src="/images/placeholder.png" alt="" />
                 </div>
-                <div class="p-8 min-h-fit sm:-ml-[10%] text-muted-700">
+                <div class="p-8 min-h-fit sm:ml-[10%] text-muted-700">
                     <div
                         class="px-6 py-1.5 my-8 font-bold border-2 text-accent_2-800 rounded-2xl bg-accent_2-300 max-w-fit label border-accent_2-200"
                     >
@@ -40,7 +40,7 @@ const { t } = useI18n();
                 <div class="block sm:hidden">
                     <img
                         class="max-h-[40vh] mb-12 mx-auto"
-                        src="/about/me.jpg"
+                        src="/images/placeholder.png"
                         alt=""
                     />
                 </div>

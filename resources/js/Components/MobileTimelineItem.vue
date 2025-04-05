@@ -1,6 +1,9 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { Link } from "@inertiajs/vue3";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const itemRef = ref(null);
 
@@ -60,12 +63,12 @@ onMounted(() => {
                         </div>
                     </div>
                     <h2 class="card-title">
-                        {{ title }}
+                        {{ t(title) }}
                         <div class="badge" :class="`badge-${badgeColor()}`">
-                            {{ skillLevel }}
+                            {{ t(skillLevel) }}
                         </div>
                     </h2>
-                    <p>{{ description }}</p>
+                    <p>{{ t(description) }}</p>
                     <div class="flex justify-end my-4 card-actions">
                         <div v-for="tag in tags">
                             <div class="badge badge-outline">{{ tag }}</div>

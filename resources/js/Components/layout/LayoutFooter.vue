@@ -29,23 +29,19 @@ const { t } = useI18n();
                     <h1 class="text-xl font-semibold">Navigation</h1>
                     <ul class="mt-4 space-y-2">
                         <li>
-                            <Link href="#">{{
-                                t("layout.header.nav.home")
-                            }}</Link>
+                            <Link href="#">{{ t("header.nav.home") }}</Link>
                         </li>
                         <li>
                             <Link href="#about">{{
-                                t("layout.header.nav.about")
+                                t("header.nav.about")
                             }}</Link>
                         </li>
                         <li>
-                            <Link href="#work">{{
-                                t("layout.header.nav.work")
-                            }}</Link>
+                            <Link href="#work">{{ t("header.nav.work") }}</Link>
                         </li>
                         <li>
                             <Link href="#contact">{{
-                                t("layout.header.nav.contact")
+                                t("header.nav.contact")
                             }}</Link>
                         </li>
                     </ul>

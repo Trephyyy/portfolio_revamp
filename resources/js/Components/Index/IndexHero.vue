@@ -1,10 +1,24 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
 import { useI18n } from "vue-i18n";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 
-const { t } = useI18n();
-const verbs = ref(["design", "code", "create", "build", "deploy"]);
+const { t, locale } = useI18n();
+
+const verbs = ref([]);
+onMounted(() => {
+    for (let i = 0; i < Number(t("hero.verbSize")); i++) {
+        verbs.value.push(t(`hero.verbs[${i}]`));
+    }
+});
+watch(locale, () => {
+    verbs.value = [];
+    for (let i = 0; i < Number(t("hero.verbSize")); i++) {
+        verbs.value.push(t(`hero.verbs[${i}]`));
+    }
+    console.log("switched locale to", locale.value);
+});
+
 const currentVerb = ref("");
 let index = 0;
 let charIndex = 0;
@@ -39,13 +53,13 @@ onMounted(() => {
     >
         <div class="bg-gray-900 bg-opacity-75 p-9 rounded-xl animate-slide-up">
             <h1 class="text-6xl font-bold text-white animate-slide-in-left">
-                Hello, I'm Trephy
+                {{ t("hero.greeting") }}
             </h1>
             <p class="py-6 text-xl text-white animate-slide-in-right">
-                A developer who loves to
+                {{ t("hero.description.part1") }}
                 <span class="text-accent_2-800">{{ currentVerb }}</span
                 ><span class="-ml-1 cursor">|</span>
-                <span class="-ml-1"> breathtaking digital experiences. </span>
+                <span class="-ml-1">{{ t("hero.description.part2") }}</span>
             </p>
             <!--   <div class="space-x-4">
                 <Link

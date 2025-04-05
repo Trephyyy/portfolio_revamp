@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+</script>
 
 <template>
     <section
@@ -18,24 +22,19 @@
                     <div
                         class="px-6 py-1.5 my-8 font-bold border-2 text-accent_2-800 rounded-2xl bg-accent_2-300 max-w-fit label border-accent_2-200"
                     >
-                        ABOUT
+                        {{ t("about.title") }}
                     </div>
-                    <h2 class="py-2 text-5xl text-muted-900">Hi, I'm Trephy</h2>
+                    <h2 class="py-2 text-5xl text-muted-900">
+                        {{ t("about.greeting") }}
+                    </h2>
                     <p class="mb-4 text-lg">
-                        a passionate
-                        <span class="text-accent_2-900"
-                            >web developer and cybersecurity enthusiast.</span
-                        >
+                        {{ t("about.intro.part1") }}
+                        <span class="text-accent_2-900">{{
+                            t("about.intro.part2")
+                        }}</span>
                     </p>
                     <p class="text-lg">
-                        Drawing on extensive experience with a variety of
-                        technologies and frameworks, I specialize in creating
-                        digital experiences that are both seamless and
-                        user-friendly. I take pride in designing intuitive,
-                        visually engaging interfaces and developing robust
-                        applications with meticulous attention to detail. My
-                        focus is on delivering polished, professional solutions
-                        that consistently exceed expectations.
+                        {{ t("about.description") }}
                     </p>
                 </div>
                 <div class="block sm:hidden">
@@ -45,13 +44,6 @@
                         alt=""
                     />
                 </div>
-                <!-- <div class="flex items-center justify-center">
-                    <img
-                        src="/path/to/your/image.jpg"
-                        alt="About Image"
-                        class="rounded-lg shadow-lg"
-                    />
-                </div> -->
             </div>
         </div>
     </section>

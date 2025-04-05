@@ -1,44 +1,94 @@
 {
-    "welcome": {
-        "title": "Trephy Portfolio",
-        "hero": {
-            "greeting": "Hi, I'm Trephy",
-            "description": "I'm a Web Developer & Cybersecurity Enthusiast creating engaging digital experiences.",
-            "explore_work": "Explore My Work",
-            "read_blog": "Read My Blog",
-
-            "button": {
-                "work": "Explore My Work",
-                "blog": "Read My Blog",
-                "contact": "Contact Me"
-            }
-        }
-    },
-    "layout": {
-        "footer": {
-            "copyright": "&copy; 2024 Trephy | Web Developer & Cybersecurity Enthusiast"
+    "hero": {
+        "greeting": "Hello, I'm Trephy",
+        "description": {
+            "part1": "A developer who loves to",
+            "part2": " breathtaking digital experiences."
         },
-        "header": {
-            "nav": {
-                "home": "Home",
-                "work": "Work",
-                "blog": "Blog",
-                "about": "About",
-                "contact": "Contact"
-            },
-
-            "brand": "Trephy"
+        "verbSize": "5",
+        "verbs": ["design", "code", "create", "build", "deploy"]
+    },
+    "header": {
+        "brand": "Trephy",
+        "nav": {
+            "home": "Home",
+            "about": "About",
+            "work": "Work",
+            "contact": "Contact"
         }
     },
-    "work": {
-        "title": "My Work",
-        "hero": {
-            "heading": "Showcasing Trephy's Projects",
-            "description": "Here is a curated selection of my favorite projects and achievements.",
-            "button": {
-                "portfolio": "View Projects",
-                "contact": "Contact Me"
+    "footer": {
+        "copyright": "© 2023 Trephy. All rights reserved."
+    },
+    "about": {
+        "title": "ABOUT",
+        "greeting": "Hi, I'm Trephy",
+        "intro": {
+            "part1": "a passionate",
+            "part2": "web developer and cybersecurity enthusiast."
+        },
+        "description": "Drawing on extensive experience with a variety of technologies and frameworks, I specialize in creating digital experiences that are both seamless and user-friendly. I take pride in designing intuitive, visually engaging interfaces and developing robust applications with meticulous attention to detail. My focus is on delivering polished, professional solutions that consistently exceed expectations."
+    },
+    "projects": {
+        "title": "Projects",
+        "description": "Here are some of the projects I have worked on."
+    },
+    "skills": {
+        "title": "Skills",
+        "description": "These are some of the skills I have acquired over the years."
+    },
+    "contact": {
+        "title": "Contact Me",
+        "description": "Have any questions or want to work together? Send me a message and I'll get back to you as soon as possible.",
+        "socialMedia": "You can also find me on social media.",
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "message": "Message",
+            "submit": "Send Message"
+        }
+    },
+    "timeline": {
+        "title": "Timeline",
+        "description": "Here is a brief overview of my professional journey.",
+        "items": {
+            "webDevelopment": {
+                "title": "Web Development",
+                "skillLevel": "EXPERT",
+                "description": "The first thing I learnt was developing for the web. I can handle both front and backend, with experience using a variety of tools and languages."
+            },
+            "cybersecurity": {
+                "title": "Cybersecurity",
+                "skillLevel": "Intermediate",
+                "description": "During my time as a web developer, I learned the basics of Cybersecurity to build secure apps. I also practice pentesting on hackthebox and tryhackme."
+            },
+            "machineLearning": {
+                "title": "Machine Learning / AI",
+                "skillLevel": "Intermediate",
+                "description": "I have experience working with machine learning and AI in various hackathons, covering both supervised and unsupervised learning."
+            },
+            "appDevelopment": {
+                "title": "App Development",
+                "skillLevel": "EXPERT",
+                "description": "I have worked on native and hybrid apps for both Android and iOS, using multiple tools, languages, and frameworks."
+            },
+            "containerizing": {
+                "title": "Containerizing / DevOps",
+                "skillLevel": "Advanced",
+                "description": "From simple reverse proxies to Kubernetes clusters, I have experience containerizing and deploying apps so users can access them on the web."
             }
         }
+    },
+    "sourceCode": {
+        "title": "SOURCE CODE",
+        "subtitle": "Behind the simulation",
+        "description": {
+            "part1": "You take the ",
+            "bluePill": "blue pill",
+            "part2": " - you keep scrolling, you leave this website and believe whatever you want to believe. You take the ",
+            "redPill": "red pill",
+            "part3": " - you stay in wonderland, and we show you how deep the rabbit hole goes."
+        },
+        "button": "Show me"
     }
 }

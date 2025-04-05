@@ -1,0 +1,1 @@
+scp -r .\public\build\ root@188.166.5.117:/var/www/trephy.sofiadev.net/portfolio_revamp/public/

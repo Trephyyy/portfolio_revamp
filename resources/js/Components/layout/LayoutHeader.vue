@@ -4,8 +4,12 @@ import { Link } from "@inertiajs/vue3";
 import { useI18n } from "vue-i18n";
 import { Icon } from "@iconify/vue";
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const isOpen = ref(false);
+
+const changeLanguage = () => {
+    locale.value = locale.value === "en" ? "bg" : "en";
+};
 </script>
 
 <template>
@@ -17,7 +21,7 @@ const isOpen = ref(false);
                 href="/"
                 class="text-2xl font-black md:text-3xl btn btn-ghost"
             >
-                {{ t("layout.header.brand") }}
+                {{ t("header.brand") }}
             </Link>
             <div
                 :class="{ block: isOpen, hidden: !isOpen }"
@@ -28,25 +32,31 @@ const isOpen = ref(false);
                 >
                     <li>
                         <a href="#" class="scroll-smooth">{{
-                            t("layout.header.nav.home")
+                            t("header.nav.home")
                         }}</a>
                     </li>
                     <li>
                         <a href="#about" class="scroll-smooth">{{
-                            t("layout.header.nav.about")
+                            t("header.nav.about")
                         }}</a>
                     </li>
                     <li>
                         <a href="#work" class="scroll-smooth">{{
-                            t("layout.header.nav.work")
+                            t("header.nav.work")
                         }}</a>
                     </li>
                     <li>
                         <a href="#contact" class="scroll-smooth">{{
-                            t("layout.header.nav.contact")
+                            t("header.nav.contact")
                         }}</a>
                     </li>
                 </ul>
+                <button
+                    @click="changeLanguage"
+                    class="ml-4 text-lg font-semibold text-secondary-100"
+                >
+                    {{ locale === "en" ? "🇧🇬" : "🇬🇧" }}
+                </button>
             </div>
             <button
                 class="relative left-0 block ml-auto text-3xl transition-transform duration-300 md:hidden focus:outline-none"

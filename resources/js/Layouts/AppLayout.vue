@@ -52,13 +52,13 @@ onMounted(() => {
         <div
             :style="{ left: cursorX + 'px', top: cursorY + 'px' }"
             :class="{ 'cursor-clicking': isClicking }"
-            class="fixed z-50 w-4 h-4 transition-transform duration-100 transform -translate-x-1/2 -translate-y-1/2 bg-purple-500 rounded-full pointer-events-none animate-cursor-move"
+            class="fixed z-50 hidden w-4 h-4 transition-transform duration-100 transform -translate-x-1/2 -translate-y-1/2 bg-purple-500 rounded-full pointer-events-none sm:block animate-cursor-move"
         ></div>
 
         <!-- Outline Cursor Circle -->
         <div
             :style="{ left: outlineCursorX + 'px', top: outlineCursorY + 'px' }"
-            class="fixed z-40 w-10 h-10 transition-transform duration-500 transform -translate-x-1/2 -translate-y-1/2 border-2 border-purple-500 rounded-full pointer-events-none animate-cursor-move"
+            class="fixed z-40 hidden w-10 h-10 transition-transform duration-500 transform -translate-x-1/2 -translate-y-1/2 border-2 border-purple-500 rounded-full pointer-events-none sm:block animate-cursor-move"
         ></div>
     </div>
 </template>

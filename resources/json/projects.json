@@ -1,6 +1,56 @@
 [
     {
         "_id": "1",
+        "name": "Appartify",
+        "slug": {
+            "current": "appartify",
+            "outside": "https://appartify.sofiadev.net"
+        },
+        "date": "2025-04-02",
+        "tags": ["Website", "Vue.js", "Laravel", "i18n"],
+        "poster": {
+            "alt": "Appartify Poster",
+            "asset": {
+                "url": "/projects/appartify-front.png",
+                "metadata": {
+                    "dimensions": { "width": 350, "height": 450 },
+                    "palette": {
+                        "dominant": {
+                            "background": "#fff",
+                            "foreground": "#000"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_id": "2",
+        "name": "Barbershop",
+        "slug": {
+            "current": "barbershop",
+            "outside": "https://barber-example.vercel.app"
+        },
+        "date": "2024-02-12",
+        "tags": ["Website", "Vue.js", "i18n"],
+        "poster": {
+            "alt": "Barbershop Poster",
+            "asset": {
+                "url": "/projects/barber-example-front.png",
+                "metadata": {
+                    "dimensions": { "width": 350, "height": 450 },
+                    "palette": {
+                        "dominant": {
+                            "background": "#000000",
+                            "foreground": "#ffffff"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_id": "3",
         "name": "Flashlearn",
         "slug": {
             "current": "flashlearn",
@@ -25,7 +75,7 @@
         }
     },
     {
-        "_id": "2",
+        "_id": "4",
         "name": "PCRevive",
         "slug": { "current": "pcrevive", "outside": "https://pcrevivebg.com" },
         "date": "2024-12-18",
@@ -47,7 +97,7 @@
         }
     },
     {
-        "_id": "3",
+        "_id": "5",
         "name": "Greenmore",
         "slug": {
             "current": "greenmore",

@@ -6,11 +6,11 @@
             <GridBackground />
         </div>
         <div class="z-10 w-full p-6 mx-10 md:w-1/2">
-            <h1 class="mb-4 text-4xl font-bold">Contact Me</h1>
+            <h1 class="mb-4 text-4xl font-bold">{{ t("contact.title") }}</h1>
             <p class="mb-6 text-lg">
-                Have any questions or want to work together? Send me a message
-                and I'll get back to you as soon as possible. <div class="divider"></div>
-                You can also find me on social media.
+                {{ t("contact.description") }}
+                <div class="divider"></div>
+                {{ t("contact.socialMedia") }}
             </p>
             <div class="flex space-x-4">
                 <a v-for="social in socials" :href="social.link" >
@@ -22,7 +22,7 @@
         <div class="z-10 w-full p-6 md:w-1/2">
             <form @submit.prevent="submitForm" class="space-y-4">
                 <div>
-                    <label for="name" class="block text-sm font-medium text-muted-200">Name</label>
+                    <label for="name" class="block text-sm font-medium text-muted-200">{{ t("contact.form.name") }}</label>
                     <input
                         type="text"
                         id="name"
@@ -32,7 +32,7 @@
                     />
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium text-muted-200">Email</label>
+                    <label for="email" class="block text-sm font-medium text-muted-200">{{ t("contact.form.email") }}</label>
                     <input
                         type="email"
                         id="email"
@@ -42,7 +42,7 @@
                     />
                 </div>
                 <div>
-                    <label for="message" class="block text-sm font-medium text-muted-200">Message</label>
+                    <label for="message" class="block text-sm font-medium text-muted-200">{{ t("contact.form.message") }}</label>
                     <textarea
                         id="message"
                         v-model="form.message"
@@ -55,7 +55,7 @@
                     type="submit"
                     class="w-full px-4 py-2 font-semibold text-white rounded-md bg-secondary-500 hover:bg-secondary-600"
                 >
-                    Send Message
+                    {{ t("contact.form.submit") }}
                 </button>
             </form>
         </div>
@@ -69,6 +69,9 @@ import anime from "animejs";
 import GridBackground from "./GridBackground.vue";
 import axios from "axios";
 import socials from "../../../json/socials.json";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const form = ref({
     name: "",

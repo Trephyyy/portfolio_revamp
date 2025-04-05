@@ -1,9 +1,9 @@
 [
     {
-        "title": "Web Development",
-        "skillLevel": "EXPERT",
+        "title": "timeline.items.webDevelopment.title",
+        "skillLevel": "timeline.items.webDevelopment.skillLevel",
         "tags": ["Backend", "Frontend"],
-        "description": "The first thing I learnt was developing for the web. I can handle both front and backend, with experience using a variety of tools and languages.",
+        "description": "timeline.items.webDevelopment.description",
         "technologies": [
             {
                 "name": "Laravel",
@@ -28,10 +28,10 @@
         ]
     },
     {
-        "title": "Cybersecurity",
-        "skillLevel": "Intermediate",
+        "title": "timeline.items.cybersecurity.title",
+        "skillLevel": "timeline.items.cybersecurity.skillLevel",
         "tags": ["Prevention", "Pentesting"],
-        "description": "During my time as a web developer, I learned the basics of Cybersecurity to build secure apps. I also practice pentesting on hackthebox and tryhackme.",
+        "description": "timeline.items.cybersecurity.description",
         "technologies": [
             {
                 "name": "Metasploit",
@@ -46,10 +46,10 @@
         ]
     },
     {
-        "title": "Machine Learning / AI",
-        "skillLevel": "Intermediate",
+        "title": "timeline.items.machineLearning.title",
+        "skillLevel": "timeline.items.machineLearning.skillLevel",
         "tags": ["Estimations", "Predictions"],
-        "description": "I have experience working with machine learning and AI in various hackathons, covering both supervised and unsupervised learning.",
+        "description": "timeline.items.machineLearning.description",
         "technologies": [
             {
                 "name": "Python",
@@ -69,10 +69,10 @@
         ]
     },
     {
-        "title": "App Development",
-        "skillLevel": "EXPERT",
+        "title": "timeline.items.appDevelopment.title",
+        "skillLevel": "timeline.items.appDevelopment.skillLevel",
         "tags": ["Native", "Hybrid"],
-        "description": "I have worked on native and hybrid apps for both Android and iOS, using multiple tools, languages, and frameworks.",
+        "description": "timeline.items.appDevelopment.description",
         "technologies": [
             {
                 "name": "React Native",
@@ -92,10 +92,10 @@
         ]
     },
     {
-        "title": "Containerizing / DevOps",
-        "skillLevel": "Advanced",
+        "title": "timeline.items.containerizing.title",
+        "skillLevel": "timeline.items.containerizing.skillLevel",
         "tags": ["Reverse Proxy", "Containers"],
-        "description": "From simple reverse proxies to Kubernetes clusters, I have experience containerizing and deploying apps so users can access them on the web.",
+        "description": "timeline.items.containerizing.description",
         "technologies": [
             {
                 "name": "Docker",

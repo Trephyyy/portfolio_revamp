@@ -1,6 +1,9 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
 import MatrixEffect from "./MatrixEffect.vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 </script>
 
 <template>
@@ -28,24 +31,28 @@ import MatrixEffect from "./MatrixEffect.vue";
             <div
                 class="px-4 py-1 font-bold border-2 text-accent_2-200 rounded-2xl bg-accent_2-500 max-w-fit label border-accent_2-400"
             >
-                SOURCE CODE
+                {{ t("sourceCode.title") }}
             </div>
             <h2 class="mt-2 text-5xl font-semibold text-muted-900">
-                Behind the simulation
+                {{ t("sourceCode.subtitle") }}
             </h2>
             <p class="max-w-sm text-lg sm:max-w-fit text-muted-400">
-                You take the <span class="text-muted-700">blue pill</span> - you
-                keep scrolling, you leave this website and believe whatever you
-                want to believe. You take the
-                <span class="text-muted-700">red pill</span> - you stay in
-                wonderland, and we show you how deep the rabbit hole goes.
+                {{ t("sourceCode.description.part1") }}
+                <span class="text-muted-700">{{
+                    t("sourceCode.description.bluePill")
+                }}</span>
+                {{ t("sourceCode.description.part2") }}
+                <span class="text-muted-700">{{
+                    t("sourceCode.description.redPill")
+                }}</span>
+                {{ t("sourceCode.description.part3") }}
             </p>
 
             <a
                 href="https://github.com/Trephyyy/portfolio_revamp"
                 class="py-3 mt-2 text-lg font-bold px-7 button text-muted-800 bg-accent-500"
             >
-                Show me
+                {{ t("sourceCode.button") }}
             </a>
         </div>
         <MatrixEffect />

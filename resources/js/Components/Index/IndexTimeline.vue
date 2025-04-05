@@ -2,6 +2,9 @@
 import MobileTimelineItem from "../MobileTimelineItem.vue";
 import TimelineItem from "../TimelineItem.vue";
 import timelineItems from "/public/data/timelineItems.json";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 </script>
 
 <template>
@@ -11,7 +14,7 @@ import timelineItems from "/public/data/timelineItems.json";
         <div
             class="px-6 py-1.5 mt-16 font-bold border-2 text-accent_2-800 rounded-2xl bg-accent_2-300 max-w-fit text-4xl label border-accent_2-200"
         >
-            Skills
+            {{ t("skills.title") }}
         </div>
         <ul
             class="hidden my-12 text-muted-100 md:block timeline timeline-vertical"

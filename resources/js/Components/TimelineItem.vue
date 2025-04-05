@@ -1,7 +1,9 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
 import { ref, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
 
+const { t } = useI18n();
 const itemRef = ref(null);
 
 const { title, skillLevel, description, side, tags, technologies } =
@@ -13,9 +15,10 @@ const { title, skillLevel, description, side, tags, technologies } =
         "tags",
         "technologies",
     ]);
+
 function badgeColor() {
     const colors = ["primary", "secondary", "accent", "muted"];
-    switch (skillLevel) {
+    switch (t(skillLevel)) {
         case "EXPERT":
             return colors[0];
         case "Intermediate":
@@ -64,14 +67,14 @@ onMounted(() => {
                         </div>
                     </div>
                     <h2 class="card-title">
-                        {{ title }}
+                        {{ t(title) }}
 
                         <div class="badge" :class="`badge-${badgeColor()}`">
-                            {{ skillLevel }}
+                            {{ t(skillLevel) }}
                         </div>
                     </h2>
                     <p>
-                        {{ description }}
+                        {{ t(description) }}
                     </p>
                     <div class="flex justify-end my-4 card-actions">
                         <div v-for="tag in tags">

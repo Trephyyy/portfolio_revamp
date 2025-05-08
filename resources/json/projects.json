@@ -1,5 +1,52 @@
 [
     {
+        "_id": "0",
+        "name": "Nexuno",
+        "slug": {
+            "current": "nexuno",
+            "outside": "https://nexuno.sofiadev.net"
+        },
+        "date": "2025-08-04",
+        "tags": ["Website", "Vue.js", "Laravel", "i18n"],
+        "poster": {
+            "alt": "Nexuno Poster",
+            "asset": {
+                "url": "/projects/Nexuno.png",
+                "metadata": {
+                    "dimensions": { "width": 350, "height": 450 },
+                    "palette": {
+                        "dominant": {
+                            "background": "#fff",
+                            "foreground": "#000"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_id": "4",
+        "name": "PCRevive",
+        "slug": { "current": "pcrevive", "outside": "https://pcrevivebg.com" },
+        "date": "2024-12-18",
+        "tags": ["Website", "Vue"],
+        "poster": {
+            "alt": "PCRevive Poster",
+            "asset": {
+                "url": "/projects/Pcrevive1.png",
+                "metadata": {
+                    "dimensions": { "width": 300, "height": 450 },
+                    "palette": {
+                        "dominant": {
+                            "background": "#111111",
+                            "foreground": "#ffffff"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
         "_id": "1",
         "name": "Appartify",
         "slug": {
@@ -74,28 +121,7 @@
             }
         }
     },
-    {
-        "_id": "4",
-        "name": "PCRevive",
-        "slug": { "current": "pcrevive", "outside": "https://pcrevivebg.com" },
-        "date": "2024-12-18",
-        "tags": ["Website", "Vue"],
-        "poster": {
-            "alt": "PCRevive Poster",
-            "asset": {
-                "url": "/projects/Pcrevive1.png",
-                "metadata": {
-                    "dimensions": { "width": 300, "height": 450 },
-                    "palette": {
-                        "dominant": {
-                            "background": "#111111",
-                            "foreground": "#ffffff"
-                        }
-                    }
-                }
-            }
-        }
-    },
+    
     {
         "_id": "5",
         "name": "Greenmore",

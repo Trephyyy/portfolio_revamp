@@ -5,9 +5,9 @@
         "icon": "mdi:facebook"
     },
     {
-        "name": "Twitter",
-        "link": "https://www.twitter.com/yourprofile",
-        "icon": "mdi:twitter"
+        "name": "Mastodon",
+        "link": "https://www.mastodon.social/@trephy",
+        "icon": "mdi:mastodon"
     },
     {
         "name": "LinkedIn",
@@ -16,7 +16,7 @@
     },
     {
         "name": "Instagram",
-        "link": "https://www.instagram.com/yourprofile",
+        "link": "https://www.instagram.com/trephy.dev",
         "icon": "mdi:instagram"
     }
 ]

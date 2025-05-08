@@ -9,9 +9,15 @@
                 reach out to us on social media.
             </p>
             <div class="flex space-x-4">
-                <a href="https://twitter.com" target="_blank" class="text-2xl">
-                    <span class="iconify" data-icon="mdi:twitter"></span>
+                <a
+                    rel="me"
+                    href="https://mastodon.social/@trephy"
+                    target="_blank"
+                    class="text-2xl"
+                >
+                    <span class="iconify" data-icon="mdi:mastodon"></span>
                 </a>
+
                 <a href="https://facebook.com" target="_blank" class="text-2xl">
                     <span class="iconify" data-icon="mdi:facebook"></span>
                 </a>

@@ -22,13 +22,25 @@ class ContactFormController extends Controller
 
         // Send discord message
 
-        DiscordAlert::message("You have a new message from your portfolio", [
-            [
-                'title' => $data['name'],
-                'description' => $data['message'],
-                'author' => ['name' => $data['email']]
-            ]
+        $curl = curl_init();
+
+        curl_setopt_array($curl, [
+            CURLOPT_URL => 'https://ntfy.sh/trephy_portfolio',
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => json_encode($data),
+            CURLOPT_HTTPHEADER => [
+                'Content-Type: application/json',
+            ],
+            CURLOPT_RETURNTRANSFER => true,
         ]);
+
+        $response = curl_exec($curl);
+
+        if (curl_errno($curl)) {
+            Log::error('Curl error: ' . curl_error($curl));
+        }
+
+        curl_close($curl);
         // Dispatch a job to send the Discord alert
         return response()->json(['message' => 'Message sent!']);
 

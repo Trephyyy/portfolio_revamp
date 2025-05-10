@@ -16,8 +16,8 @@
                     "dimensions": { "width": 350, "height": 450 },
                     "palette": {
                         "dominant": {
-                            "background": "#fff",
-                            "foreground": "#000"
+                          "background": "#111111",
+                            "foreground": "#ffffff"
                         }
                     }
                 }
@@ -63,8 +63,8 @@
                     "dimensions": { "width": 350, "height": 450 },
                     "palette": {
                         "dominant": {
-                            "background": "#fff",
-                            "foreground": "#000"
+                           "background": "#111111",
+                            "foreground": "#ffffff"
                         }
                     }
                 }

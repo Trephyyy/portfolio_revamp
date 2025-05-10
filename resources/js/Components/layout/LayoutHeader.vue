@@ -30,9 +30,10 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
+
     <header :class="[
-        'z-30 w-[90%] mx-[5%] flex fixed top-0 my-3 bg-[#ffffff80] navbar text-secondary-100 transition-all duration-300 animate-slide-down',
-        isScrolled ? 'rounded-none shadow-md w-screen bg-[#cacaca] mx-0 my-0' : 'rounded-xl'
+        'z-30  flex fixed top-0  navbar text-secondary-100 transition-all duration-300 animate-slide-down',
+        isScrolled ? 'rounded-none shadow-md w-screen bg-[#cacaca] mx-0 my-0' : 'rounded-xl bg-[#ffffff80] my-3  mx-[5%] w-[90%]'
     ]">
         <div class="relative flex items-center justify-between w-full px-10">
             <Link href="/" class="text-2xl font-black md:text-3xl btn btn-ghost">

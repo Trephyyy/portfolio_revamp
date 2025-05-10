@@ -112,13 +112,13 @@
                                         </div>
                                     </article>
                                     <img :alt="project.poster.alt" loading="lazy" decoding="async" v-bind="generateImageSizeProps({
-                                        image: project.poster,
+                                        image: `${project.poster} + ?v=1`,
                                     })" :class="[
-                                            'pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-500',
-                                            !filteredProjects.includes(project)
-                                                ? 'opacity-20 grayscale'
-                                                : 'group-hover:scale-105 group-focus-visible:scale-105',
-                                        ]" :style="{
+                                        'pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-500',
+                                        !filteredProjects.includes(project)
+                                            ? 'opacity-20 grayscale'
+                                            : 'group-hover:scale-105 group-focus-visible:scale-105',
+                                    ]" :style="{
                                             objectPosition: isVisibleSlide(index) ? `${getImagePosition(index)}%` : '50%',
                                             backgroundColor: project.poster.asset.metadata.palette.dominant.background,
                                         }" />

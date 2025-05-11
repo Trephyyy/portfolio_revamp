@@ -112,16 +112,16 @@
                                         </div>
                                     </article>
                                     <img :alt="project.poster.alt" loading="lazy" decoding="async" v-bind="generateImageSizeProps({
-                                        image: `${project.poster} + ?v=1`,
+                                        image: project.poster,
                                     })" :class="[
                                         'pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-500',
                                         !filteredProjects.includes(project)
                                             ? 'opacity-20 grayscale'
                                             : 'group-hover:scale-105 group-focus-visible:scale-105',
                                     ]" :style="{
-                                            objectPosition: isVisibleSlide(index) ? `${getImagePosition(index)}%` : '50%',
-                                            backgroundColor: project.poster.asset.metadata.palette.dominant.background,
-                                        }" />
+                                        objectPosition: isVisibleSlide(index) ? `${getImagePosition(index)}%` : '50%',
+                                        backgroundColor: project.poster.asset.metadata.palette.dominant.background,
+                                    }" />
                                 </a>
                             </li>
                         </ul>
@@ -332,45 +332,27 @@ const scrollToSlide = (slideIndex) => {
     isAnimating.value = true;
     const targetScrollLeft = slideIndex * (carouselSlideWidth.value + CAROUSEL_SLIDES_GAP);
 
-    // Use a simpler animation for mobile
-    const isMobile = window.innerWidth < 768;
+    // Smooth scroll for all devices
+    carouselRef.value.scrollTo({
+        left: targetScrollLeft,
+        behavior: 'smooth',
+    });
 
-    if (isMobile) {
-        // Simple scroll without animation for mobile
-        carouselRef.value.scrollTo({
-            left: targetScrollLeft,
-            behavior: 'smooth'
-        });
-
-        // Update state after scroll completes
-        setTimeout(() => {
-            scrollPosition.value = carouselRef.value.scrollLeft;
-            updateCurrentSlide(scrollPosition.value);
-            isAnimating.value = false;
-        }, 300);
-    } else {
-        // Use anime.js for desktop with optimized settings
-        anime({
-            targets: carouselRef.value,
-            scrollLeft: targetScrollLeft,
-            duration: 400,
-            easing: "easeOutQuad",
-            complete: () => {
-                scrollPosition.value = carouselRef.value.scrollLeft;
-                updateCurrentSlide(scrollPosition.value);
-                isAnimating.value = false;
-            }
-        });
-    }
+    // Update state after scroll completes
+    setTimeout(() => {
+        scrollPosition.value = carouselRef.value.scrollLeft;
+        updateCurrentSlide(scrollPosition.value);
+        isAnimating.value = false;
+    }, 500); // Adjust timeout to match scroll duration
 };
 
 const scrollToPreviousSlide = () => {
-    if (isAnimating.value) return;
+    if (isAnimating.value || currentSlide.value <= 0) return; // Prevent scrolling if already at the first slide
     scrollToSlide(currentSlide.value - 1);
 };
 
 const scrollToNextSlide = () => {
-    if (isAnimating.value) return;
+    if (isAnimating.value || currentSlide.value >= props.projects.length - 1) return; // Prevent scrolling if already at the last slide
     scrollToSlide(currentSlide.value + 1);
 };
 

@@ -14,26 +14,19 @@ import IndexWork from "@/Components/Index/IndexWork.vue";
 </script>
 
 <template>
+
     <Head title="Home" />
     <AppLayout>
-        <div
-            class="bg-primary-500 text-secondary dark:bg-primary-600 dark:text-secondary"
-        >
-            <div
-                class="relative flex min-h-screen flex-col selection:bg-[#FF2D20] selection:text-white animate-fade-in"
-                style="scroll-behavior: smooth"
-            >
+        <div class="bg-primary-500 text-secondary dark:bg-primary-600 dark:text-secondary">
+            <div class="relative flex min-h-screen flex-col selection:bg-[#FF2D20] selection:text-white animate-fade-in"
+                style="scroll-behavior: smooth">
                 <div class="relative w-full h-full overflow-hidden">
-                    <main
-                        class="relative flex flex-col w-full bg-gradient-to-r from-accent_2-500 to-accent_2-400"
-                    >
-                        <div
-                            class="fixed z-10 w-screen h-screen bg-transparent"
-                        >
+                    <main class="relative flex flex-col w-full bg-gradient-to-r from-accent_2-500 to-accent_2-400">
+                        <div class="relative z-10 w-screen ">
                             <IndexHero />
-                            <GridBackground />
+                            <GridBackground class="fixed" />
                         </div>
-                        <div class="z-20">
+                        <div class="z-20 mt-[-100vh]">
                             <div class="relative h-screen"></div>
                             <AboutSection />
                             <IndexTimeline />
@@ -55,6 +48,7 @@ import IndexWork from "@/Components/Index/IndexWork.vue";
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }

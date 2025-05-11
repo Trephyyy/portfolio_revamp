@@ -1,15 +1,20 @@
 {
     "hero": {
-        "greeting": "Hello, I'm Trephy",
-        "description": {
-            "part1": "A developer who loves to",
-            "part2": " breathtaking digital experiences."
+
+        "button":{
+            "work": "See my work",
+            "contact": "Contact me"
         },
-        "verbSize": "5",
-        "verbs": ["design", "code", "create", "build", "deploy"]
+        "greeting": "Hello, I'm Danail",
+       "description": {
+    "part1": "I help businesses",
+    "part2": " stunning digital solutions that drive results."
+  },
+  "verbs": ["design", "develop", "launch", "optimize", "scale"],
+  "verbSize": "5"
     },
     "header": {
-        "brand": "Trephy",
+        "brand": "Portfolio",
         "nav": {
             "home": "Home",
             "about": "About",
@@ -18,11 +23,11 @@
         }
     },
     "footer": {
-        "copyright": "© 2023 Trephy. All rights reserved."
+        "copyright": "© 2023 Danail. All rights reserved."
     },
     "about": {
         "title": "ABOUT",
-        "greeting": "Hi, I'm Trephy",
+        "greeting": "Hi, I'm Danail",
         "intro": {
             "part1": "a passionate",
             "part2": "web developer and cybersecurity enthusiast."

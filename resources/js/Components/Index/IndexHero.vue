@@ -2,15 +2,36 @@
 import { Link } from "@inertiajs/vue3";
 import { useI18n } from "vue-i18n";
 import { ref, onMounted, watch } from "vue";
-
+import { motion } from "motion-v"
 const { t, locale } = useI18n();
-
 const verbs = ref([]);
+
+// For animated background
+const particles = ref([]);
+const particleCount = 50;
+
 onMounted(() => {
+    // Load verbs from i18n
     for (let i = 0; i < Number(t("hero.verbSize")); i++) {
         verbs.value.push(t(`hero.verbs[${i}]`));
     }
+
+    // Initialize animated background particles
+    for (let i = 0; i < particleCount; i++) {
+        particles.value.push({
+            id: i,
+            x: Math.random() * 100,
+            y: Math.random() * 100,
+            size: Math.random() * 20 + 5,
+            duration: Math.random() * 20 + 10,
+            delay: Math.random() * 10,
+        });
+    }
+
+    // Start typing animation
+    typeWriter();
 });
+
 watch(locale, () => {
     verbs.value = [];
     for (let i = 0; i < Number(t("hero.verbSize")); i++) {
@@ -42,41 +63,58 @@ const typeWriter = () => {
     }
 };
 
-onMounted(() => {
-    typeWriter();
-});
+// Function to handle scrolling to section
+const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+};
 </script>
 
 <template>
-    <div
-        class="z-30 flex items-center justify-center w-full min-h-screen mx-auto text-center bg-center bg-cover hero hero-content animate-fade-in"
-    >
-        <div class="bg-gray-900 bg-opacity-75 p-9 rounded-xl animate-slide-up">
-            <h1 class="text-6xl font-bold text-white animate-slide-in-left">
-                {{ t("hero.greeting") }}
-            </h1>
-            <p class="py-6 text-xl text-white animate-slide-in-right">
-                {{ t("hero.description.part1") }}
-                <span class="text-accent_2-800">{{ currentVerb }}</span
-                ><span class="-ml-1 cursor">|</span>
-                <span class="-ml-1">{{ t("hero.description.part2") }}</span>
-            </p>
-            <!--   <div class="space-x-4">
-                <Link
-                    href="/work"
-                    class="border-none btn bg-accent hover:bg-accent-600 text-primary"
-                >
-                    {{ t("welcome.hero.button.work") }}
-                </Link>
-                <Link
-                    href="/contact"
-                    class="border-none btn bg-secondary hover:bg-secondary-600 text-primary"
-                >
-                    {{ t("welcome.hero.button.contact") }}
-                </Link>
-            </div> -->
+    <section id="home"
+        class="relative flex items-center justify-center w-full min-h-screen mx-auto overflow-hidden text-center">
+        <!-- Animated background -->
+        <div class="absolute inset-0 overflow-hidden bg-gradient-to-br from-gray-900 to-indigo-900">
         </div>
-    </div>
+        <motion.div
+            class="absolute inset-0 overflow-hidden pointer-events-none bg-gradient-to-br from-gray-900 to-indigo-900"
+            :initial="{ opacity: 0.8, scale: 1 }" :animate="{ opacity: [0.8, 1, 0.8], scale: [1, 1.02, 1] }"
+            :transition="{ duration: 6, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' }" />
+
+        <!-- Main hero content -->
+        <motion.div :initial="{ opacity: 0, y: 50 }" :animate="{ opacity: 1, y: 0 }"
+            :transition="{ duration: 1, delay: 0.5 }"
+            class="z-30 px-6 py-12 bg-gray-900 bg-opacity-75 max-w-[90%] sm:max-w-2xl rounded-xl backdrop-blur-md">
+            <motion.h1 :initial="{ opacity: 0, x: -50 }" :animate="{ opacity: 1, x: 0 }"
+                :transition="{ duration: 1, delay: 0.8 }" class="text-4xl font-bold text-white md:text-5xl">
+                {{ t("hero.greeting") }}
+            </motion.h1>
+
+            <motion.p :initial="{ opacity: 0, x: 50 }" :animate="{ opacity: 1, x: 0 }"
+                :transition="{ duration: 1, delay: 1.2 }"
+                class="py-6 text-lg font-medium text-white sm:whitespace-nowrap md:text-xl">
+                {{ t("hero.description.part1") }}
+                <span class="text-indigo-300">{{ currentVerb }}</span><span class="-ml-1 cursor">|</span>
+                <br v-if="!$i18n.locale.startsWith('en')" />
+                <span class="-ml-1">{{ t("hero.description.part2") }}</span>
+            </motion.p>
+
+            <motion.div :initial="{ opacity: 0, y: 20 }" :animate="{ opacity: 1, y: 0 }"
+                :transition="{ duration: 1, delay: 1.5 }"
+                class="z-10 flex flex-col justify-center mt-8 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                <button @click="scrollToSection('work')"
+                    class="px-8 py-3 font-medium text-gray-900 transition-colors duration-300 bg-indigo-300 rounded-lg hover:bg-indigo-400">
+                    {{ t("hero.button.work") }}
+                </button>
+                <button @click="scrollToSection('contact')"
+                    class="px-8 py-3 font-medium text-white transition-colors duration-300 bg-transparent border-2 border-indigo-300 rounded-lg hover:bg-indigo-900">
+                    {{ t("hero.button.contact") }}
+                </button>
+            </motion.div>
+        </motion.div>
+    </section>
 </template>
 
 <style scoped>
@@ -90,63 +128,5 @@ onMounted(() => {
     to {
         visibility: hidden;
     }
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slide-up {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slide-in-left {
-    from {
-        transform: translateX(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slide-in-right {
-    from {
-        transform: translateX(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-.animate-fade-in {
-    animation: fade-in 1s ease-in-out;
-}
-
-.animate-slide-up {
-    animation: slide-up 1s ease-in-out;
-}
-
-.animate-slide-in-left {
-    animation: slide-in-left 1s ease-in-out;
-}
-
-.animate-slide-in-right {
-    animation: slide-in-right 1s ease-in-out;
 }
 </style>
